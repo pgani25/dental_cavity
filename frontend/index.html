@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dental Cavity Detection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Dental Cavity Detection</h1>
+    <form id="uploadForm" class="form-box">
+      <input type="text" name="name" placeholder="Patient Name" required />
+      <input type="number" name="age" placeholder="Age" required />
+      <input type="file" name="image" accept="image/*" required />
+      <img id="previewImage" class="output-img show" />
+      <button type="submit">Detect</button>
+    </form>
+    <div id="result" class="result-box"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

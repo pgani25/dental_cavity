@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dental Cavity Report</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Detection Report</h1>
+    <div id="reportData" class="result-box show"></div>
+    <img id="outputImage" class="output-img show" src="" alt="Cavity Detection Result" />
+    <br>
+    <a href="index.html" style="margin-top: 20px; display: inline-block;">🔙 Back to Detection</a>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get('name');
+    const age = params.get('age');
+    const cavityCount = params.get('cavity_count');
+    const image = params.get('output_image');
+
+    document.getElementById('reportData').innerHTML = `
+      ✅ <strong>Patient:</strong> ${name}<br>
+      <strong>Age:</strong> ${age}<br>
+      <strong>Cavities Detected:</strong> ${cavityCount}
+    `;
+    document.getElementById('outputImage').src = '/' + image;
+  </script>
+</body>
+</html>
